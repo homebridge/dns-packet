@@ -155,6 +155,17 @@ tape('query', function (t) {
     }]
   })
 
+  testEncoder(t, packet, {
+    type: 'query',
+    id: 42,
+    questions: [{
+      type: 'A',
+      class: 'CH',
+      flag_qu: true,
+      name: 'hello.a.com'
+    }]
+  })
+
   t.end()
 })
 

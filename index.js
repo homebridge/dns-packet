@@ -1401,7 +1401,9 @@ question.encode = function (q, buf, offset) {
   buf.writeUInt16BE(types.toType(q.type), offset)
   offset += 2
 
-  buf.writeUInt16BE(classes.toClass(q.class === undefined ? 'IN' : q.class), offset)
+  let qclass = classes.toClass(q.class === undefined ? 'IN' : q.class)
+  if (q.flag_qu) qclass |= QU_MASK // the 1st bit of the class is the question unicast bit
+  buf.writeUInt16BE(qclass, offset)
   offset += 2
 
   question.encode.bytes = offset - oldOffset
@@ -1422,11 +1424,11 @@ question.decode = function (buf, offset) {
   q.type = types.toString(buf.readUInt16BE(offset))
   offset += 2
 
-  q.class = classes.toString(buf.readUInt16BE(offset))
+  const qclass = buf.readUInt16BE(offset)
   offset += 2
 
-  const qu = !!(q.class & QU_MASK)
-  if (qu) q.class &= NOT_QU_MASK
+  q.class = classes.toString(qclass & NOT_QU_MASK)
+  q.flag_qu = !!(qclass & QU_MASK)
 
   question.decode.bytes = offset - oldOffset
   return q
