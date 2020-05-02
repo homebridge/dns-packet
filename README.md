@@ -1,6 +1,8 @@
 # dns-packet
-[![](https://img.shields.io/npm/v/@homebridge/dns-packet.svg?style=flat)](https://www.npmjs.org/package/@homebridge/dns-packet)
-[![](https://img.shields.io/npm/dm/@homebridge/dns-packet.svg)](https://www.npmjs.org/package/@homebridge/dns-packet)
+[![](https://badgen.net/npm/v/@homebridge/dns-packet.svg)](https://www.npmjs.org/package/@homebridge/dns-packet)
+[![](https://badgen.net/npm/dt/@homebridge/dns-packet.svg)](https://www.npmjs.org/package/@homebridge/dns-packet)
+![Node-CI](https://github.com/homebridge/dns-packet/workflows/Node-CI/badge.svg)
+[![Coverage Status](https://coveralls.io/repos/github/homebridge/dns-packet/badge.svg?branch=master)](https://coveralls.io/github/homebridge/dns-packet?branch=master)
 
 An [abstract-encoding](https://github.com/mafintosh/abstract-encoding) compliant module for encoding / decoding DNS packets.
 Lifted out of [multicast-dns](https://github.com/mafintosh/multicast-dns) as a separate module.
