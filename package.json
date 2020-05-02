@@ -1,11 +1,17 @@
 {
-  "name": "dns-packet",
+  "name": "@homebridge/dns-packet",
   "version": "5.2.1",
   "description": "An abstract-encoding compliant module for encoding / decoding DNS packets",
   "author": "Mathias Buus",
   "license": "MIT",
-  "repository": "mafintosh/dns-packet",
-  "homepage": "https://github.com/mafintosh/dns-packet",
+  "homepage": "https://github.com/homebridge/dns-packet",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/homebridge/dns-packet.git"
+  },
+  "bugs": {
+    "url": "https://github.com/homebridge/dns-packet/issues"
+  },
   "engines": {
     "node": ">=6"
   },
@@ -20,14 +26,14 @@
     "ip": "^1.1.5"
   },
   "devDependencies": {
-    "eslint": "^5.14.1",
-    "eslint-config-standard": "^12.0.0",
-    "eslint-plugin-import": "^2.16.0",
-    "eslint-plugin-node": "^8.0.1",
-    "eslint-plugin-promise": "^4.0.1",
-    "eslint-plugin-standard": "^4.0.0",
-    "nyc": "^13.3.0",
-    "tape": "^4.10.1"
+    "eslint": "^6.8.0",
+    "eslint-config-standard": "^14.1.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-promise": "^4.2.1",
+    "eslint-plugin-standard": "^4.0.1",
+    "nyc": "^15.0.1",
+    "tape": "^5.0.0"
   },
   "keywords": [
     "dns",
