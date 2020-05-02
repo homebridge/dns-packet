@@ -1,6 +1,6 @@
 # dns-packet
-[![](https://badgen.net/npm/v/@homebridge/dns-packet.svg)](https://www.npmjs.org/package/@homebridge/dns-packet)
-[![](https://badgen.net/npm/dt/@homebridge/dns-packet.svg)](https://www.npmjs.org/package/@homebridge/dns-packet)
+[![](https://badgen.net/npm/v/@homebridge/dns-packet)](https://www.npmjs.org/package/@homebridge/dns-packet)
+[![](https://badgen.net/npm/dt/@homebridge/dns-packet)](https://www.npmjs.org/package/@homebridge/dns-packet)
 ![Node-CI](https://github.com/homebridge/dns-packet/workflows/Node-CI/badge.svg)
 [![Coverage Status](https://coveralls.io/repos/github/homebridge/dns-packet/badge.svg?branch=master)](https://coveralls.io/github/homebridge/dns-packet?branch=master)
 
