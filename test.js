@@ -1,6 +1,7 @@
 'use strict'
 
 const tape = require('tape')
+const ip = require('ip')
 const packet = require('./')
 const rcodes = require('./rcodes')
 const opcodes = require('./opcodes')
@@ -543,6 +544,28 @@ tape('unpack', function (t) {
   t.ok(compare(t, authority.type, 'NS'), 'streamDecoded RR type match')
   t.ok(compare(t, authority.name, 'bangj.com'), 'streamDecoded RR name match')
   t.ok(compare(t, authority.data, 'oj.bangj.com'), 'streamDecoded RR rdata match')
+  t.end()
+})
+
+tape('rawRecordData', function (t) {
+  const encoded = packet.encode({
+    type: 'response',
+    answers: [{
+      name: 'hello.a.com',
+      type: 'A',
+      class: 'IN',
+      data: '127.0.0.1'
+    }]
+  })
+
+  const aData = Buffer.allocUnsafe(6)
+  aData.writeUInt16BE(4, 0)
+  ip.toBuffer('127.0.0.1', aData, 2)
+
+  const decoded = packet.decode(encoded)
+  const rawData = decoded.answers[0].rawData
+
+  t.ok(aData.toString('hex') === rawData.toString('hex'))
   t.end()
 })
 

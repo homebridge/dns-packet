@@ -14,6 +14,8 @@ const NOT_FLUSH_MASK = ~FLUSH_MASK
 const QU_MASK = 1 << 15
 const NOT_QU_MASK = ~QU_MASK
 
+exports.classes = classes
+exports.types = types
 const name = exports.txt = exports.name = {}
 
 name.encode = function (str, buf, offset) {
@@ -1374,6 +1376,8 @@ answer.decode = function (buf, offset) {
     const enc = renc(a.type)
     a.data = enc.decode(buf, offset + 8)
     offset += 8 + enc.decode.bytes
+
+    a.rawData = buf.slice(offset - enc.decode.bytes, offset) // we need the raw buffer for simultaneous probe tiebreaking
   }
 
   answer.decode.bytes = offset - oldOffset
