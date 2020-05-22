@@ -243,6 +243,18 @@ tape('response', function (t) {
     }]
   })
 
+  testEncoder(t, packet, {
+    type: 'response',
+    answers: [{
+      type: 'NSEC',
+      name: 'nsectest.local',
+      data: {
+        nextDomain: 'a.domain',
+        rrtypes: ['A', 'TXT', 'RRSIG']
+      }
+    }]
+  })
+
   t.end()
 })
 

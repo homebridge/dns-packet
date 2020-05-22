@@ -1377,6 +1377,7 @@ answer.decode = function (buf, offset) {
     a.data = enc.decode(buf, offset + 8)
     offset += 8 + enc.decode.bytes
 
+    // TODO maybe make this an config option?
     a.rawData = buf.slice(offset - enc.decode.bytes, offset) // we need the raw buffer for simultaneous probe tiebreaking
   }
 
