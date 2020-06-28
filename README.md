@@ -11,6 +11,15 @@ Lifted out of [multicast-dns](https://github.com/mafintosh/multicast-dns) as a s
 npm install @homebridge/dns-packet
 ```
 
+## Notice
+
+This fork of the original [dns-packet](https://github.com/mafintosh/dns-packet) library was used in the early 
+beta builds of the [ciao](https://github.com/homebridge/ciao) library. It was replaced with an encoder/decoder
+directly packaged into ciao improving on dns-packet with support for message compression, properly splitting
+dns packets according to the MTU and generally improving readability and maintainability (as it is also 
+written in TypeScript).  
+You may or may not use this fork or derive your work from it. Though keep in mind, that it is no longer maintained.
+
 ## UDP Usage
 
 ``` js
